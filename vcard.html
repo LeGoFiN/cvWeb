@@ -2,8 +2,18 @@
 <html>
 <head>
     <title>vCard</title>
+    <script>
+        // Function to trigger the vCard download and pop-up
+        function downloadAndOpenVCard() {
+            var link = document.getElementById('vcard-download');
+            link.click(); // Simulate a click event
+            setTimeout(function () {
+                window.open('your-contact.vcf', '_blank');
+            }, 1000); // Open the vCard file after a short delay (adjust as needed)
+        }
+    </script>
 </head>
-<body>
+<body onload="downloadAndOpenVCard()">
     <header>
         <h1>Contact Information</h1>
     </header>
@@ -12,7 +22,7 @@
         <p>Email: your@email.com</p>
         <p>Phone: +1234567890</p>
         <!-- Other contact details -->
-        <a href="your-contact.vcf" download>Download vCard</a>
+        <a id="vcard-download" href="your-contact.vcf" download style="display: none;">Download vCard</a>
     </section>
 </body>
 </html>
